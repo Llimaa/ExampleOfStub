@@ -12,10 +12,8 @@ public class HttpClientStubTests
             Content = new StringContent("{\"message\": \"Result from stub\"}")
         };
 
-        // Cria o stub do HttpMessageHandler
         var handlerStub = new HttpMessageHandlerStub(responseMessage);
         
-
         var httpClient = new HttpClient(handlerStub);
 
         var response = await httpClient.GetAsync("https://external/api");
